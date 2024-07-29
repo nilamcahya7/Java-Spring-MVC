@@ -1,23 +1,22 @@
 package com.example.demo.models;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Transaction {
   private Integer id;
   private Integer userId;
   private Integer roomId;
   private Integer statusId;
-  private Date beginReservation;
-  private Date endReservation;
-  private Timestamp submitTransaction;
+  private LocalDateTime beginReservation;
+  private LocalDateTime endReservation;
+  private LocalDateTime submitTransaction;
 
   public Transaction(){
 
   }
 
-  public Transaction(Integer id, Integer userId, Integer roomId, Integer statusId, Date beginReservation,
-      Date endReservation, Timestamp submitTransaction) {
+  public Transaction(Integer id, Integer userId, Integer roomId, Integer statusId, LocalDateTime beginReservation,
+      LocalDateTime endReservation, LocalDateTime submitTransaction) {
     this.id = id;
     this.userId = userId;
     this.roomId = roomId;
@@ -59,27 +58,27 @@ public class Transaction {
     this.statusId = statusId;
   }
 
-  public Date getBeginReservation() {
+  public LocalDateTime getBeginReservation() {
     return beginReservation;
   }
 
-  public void setBeginReservation(Date beginReservation) {
+  public void setBeginReservation(LocalDateTime beginReservation) {
     this.beginReservation = beginReservation;
   }
 
-  public Date getEndReservation() {
+  public LocalDateTime getEndReservation() {
     return endReservation;
   }
 
-  public void setEndReservation(Date endReservation) {
+  public void setEndReservation(LocalDateTime endReservation) {
     this.endReservation = endReservation;
   }
 
-  public Timestamp getSubmitTransaction() {
+  public LocalDateTime getSubmitTransaction() {
     return submitTransaction;
   }
 
-  public void setSubmitTransaction(Timestamp submitTransaction) {
+  public void setSubmitTransaction(LocalDateTime submitTransaction) {
     this.submitTransaction = submitTransaction;
   }
 
