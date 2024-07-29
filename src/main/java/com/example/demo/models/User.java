@@ -1,21 +1,31 @@
 package com.example.demo.models;
 
-public class User extends Employee{
+public class User{
+  private Integer id;
+  private Integer employeeId;
   private String username;
   private String password;
-  private Integer employeeId;
 
-
-  public User(String username, String password, Integer employeeId) {
-    this.username = username;
-    this.password = password;
+  public User(Integer id, Integer employeeId, String username, String password) {
+    this.id = id;
     this.employeeId = employeeId;
-  }
-  public User(String firstName, String lastName, String email, Integer divisionId, String username, String password,
-    Integer employeeId) {
-    super(firstName, lastName, email, divisionId);
     this.username = username;
     this.password = password;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public Integer getEmployeeId() {
+    return employeeId;
+  }
+
+  public void setEmployeeId(Integer employeeId) {
     this.employeeId = employeeId;
   }
 
@@ -35,11 +45,5 @@ public class User extends Employee{
     this.password = password;
   }
 
-  public Integer getEmployeeId() {
-    return employeeId;
-  }
   
-  public void setEmployeeId(Integer employeeId) {
-    this.employeeId = employeeId;
-  }
 }

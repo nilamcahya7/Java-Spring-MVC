@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 public class Employee {
+  private Integer id;
   private String firstName;
   private String lastName;
   private String email;
@@ -10,11 +11,20 @@ public class Employee {
 
   }
 
-  public Employee(String firstName, String lastName, String email, Integer divisionId) {
+  public Employee(Integer id, String firstName, String lastName, String email, Integer divisionId) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.divisionId = divisionId;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
 
   public String getFirstName() {
@@ -48,4 +58,6 @@ public class Employee {
   public void setDivisionId(Integer divisionId) {
     this.divisionId = divisionId;
   }
+
+  
 }
