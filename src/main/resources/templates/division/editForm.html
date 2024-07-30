@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Division</title>
+</head>
+<body>
+  <h1>Edit Division</h1>
+  <form method="post" th:action="@{/division/update}" th:object="${division}">
+    <input type="text" id="name" th:field="*{name}" placeholder="Division Name" required />
+    <input type="hidden" th:field="*{id}" />
+    <button type="submit">Submit</button>
+  </form>
+  <h1>hello world</h1>
+</body>
+</html>

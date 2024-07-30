@@ -1,14 +1,45 @@
 package com.example.demo.models;
 
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name = "tbl_m_room")
 public class Room {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private Integer id;
+
+  @Column(name = "name")
   private String name;
+
+  @Column(name = "capacity")
   private Integer capacity;
   
-  public Room(Integer id, String name, Integer capacity) {
+  @OneToMany(mappedBy = "room")
+  @JsonIgnore
+  private List<Transaction> transactions;
+
+  public Room(){
+
+  }
+
+  
+  public Room(Integer id, String name, Integer capacity, List<Transaction> transactions) {
     this.id = id;
     this.name = name;
     this.capacity = capacity;
+    this.transactions = transactions;
   }
 
   public Integer getId() {
@@ -33,6 +64,14 @@ public class Room {
 
   public void setCapacity(Integer capacity) {
     this.capacity = capacity;
+  }
+
+  public List<Transaction> getTransactions() {
+    return transactions;
+  }
+
+  public void setTransactions(List<Transaction> transactions) {
+    this.transactions = transactions;
   }
 
   
