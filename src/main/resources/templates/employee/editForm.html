@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Employee</title>
+</head>
+
+<body>
+  <h1>Edit Employee</h1>
+  <form method="post" th:action="@{/employee/update}" th:object="${employee}">
+    <label>First Name : </label>
+    <input type="text" name="name" th:field="*{firstName}" placeholder="first name" /> <br>
+    <label>Last Name : </label>
+    <input type="text" name="name" th:field="*{lastName}" placeholder="last name" /> <br>
+    <label>Email :</label>
+    <input type="text" name="name" th:field="*{email}" placeholder="email" /> <br>
+    <label>Division : </label>
+    <select th:field="*{division}">
+      <option th:each="division : ${divisions}" th:value="${division.id}" th:text="${division.name}">Division</option>
+    </select>
+    <input type="hidden" th:field="*{id}" />
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>
